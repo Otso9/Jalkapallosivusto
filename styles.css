@@ -1,0 +1,151 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+        background: url('photo-1542683305-710078a12f73.jpg') no-repeat center center fixed;
+        background-size: cover;
+    color: #333;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+
+.hero {
+    
+        background-image: url('Football-3x1-WEB-scaled.jpg');  /* Aseta bannerikuva */
+        background-size: cover;                      /* Skaalaa kuva täyttämään koko alue */
+        background-position: center;                 /* Keskittää kuvan */
+        background-repeat: no-repeat;                /* Estää kuvan toistumisen */
+        height: 200px;                               /* Aseta korkeus bannerille, voit säätää tätä tarpeen mukaan */
+    
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.blog-post {
+    background-color: #ffffffc0;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.blog-post img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.blog-post h3 {
+    font-size: 1.8em;
+    margin-top: 10px;
+    color: #333;
+}
+
+.blog-post p {
+    margin: 10px 0;
+}
+
+.blog-post a {
+    color: #ca2424;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+.blog-post ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.blog-post ul li {
+    margin-bottom: 5px;
+}
+
+.content h2, .content p {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+p {
+    font-size: 24px;
+}
+
+.highlight {
+    background-color: rgba(250, 250, 250, 0.63);
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: rgb(0, 0, 0);
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

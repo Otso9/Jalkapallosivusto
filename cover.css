@@ -1,0 +1,54 @@
+
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #1f1e1e;
+  text-shadow:none
+}
+
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  background-image: url('https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_lg_2x/f_auto/primary/sv4zhez2lyydydg8a4tb');
+  background-size: cover;
+  background-position: center;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+.nav-masthead .nav-link {
+  color: rgba(255, 255, 255, .5);
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.nav-link {
+  color: #ebebeb !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.lead {
+  font-weight: bold;
+  color: white;
+}
+
+h1, h3 {
+  color: white;
+}

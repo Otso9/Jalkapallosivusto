@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fi" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Jalkapallo</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+  
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="carousel.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+  
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Minun Jalkapallo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Jalkapallo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="Joukkueet.html">Joukkueet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="jalkapalloilijat.html">Jalkapalloilijat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="MinunJalkapallo.html">Minun Jalkapallo</a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.fcbarcelona.com/photo-resources/2023/05/20/fd8f3ab0-de0a-46f3-b458-889c4678adcf/2022-05-20_FCBvsREIALSOCIETAT_139.JPG?width=1200&height=525" class="d-block" alt="Slide 1" >
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Lempi joukkue</h1>
+            <p class="opacity-90">FC Barcelona on minun lemppari joukkue. Aloin kannustamaan joukkuetta jo nuorena. Olen tykännyt sen pelityylistä ja faneista. Joku päivä toivon pääseväni katsomaan sen peliä livenä.</p>
+            <p><a class="btn btn-lg btn-primary" href="https://www.youtube.com/watch?v=UBPgHWyREQY" target="_blank">Katso video</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.pinimg.com/originals/88/52/6d/88526d53ad59f4efb28ba84daad5baad.jpg" class="d-block" alt="Slide 2" >
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Lempi pelaaja</h1>
+            <p>Neymar Jr on minusta yksi viihdyttävimmistä jalkapalloilijoista. Tykkään hänen tavasta pelata peliä, koska hän uskaltaa haastaa vastustajaa.</p>
+            <p><a class="btn btn-lg btn-primary" href="https://www.youtube.com/watch?v=RK3LLoH_B-s" target="_blank">Katso video</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_lg_2x/f_auto/primary/eg8ezvj1ilwbw7yfyqp4" class="d-block" alt="Slide 3" >
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Lempi maajoukkue</h1>
+            <p>Brasilian maajoukkue on minun suosikki. Brasialaisten tapa pelata jalkapalloa on viihdyttävää ja jännittävää. Heidän historiansa on myös yksi rikkaimmista.</p>
+            <p><a class="btn btn-lg btn-primary" href="https://www.youtube.com/watch?v=c0-ZhEkEFtA" target="_blank">Katso video</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <div class="container marketing">
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="https://www.toptacular.co.uk/wp-content/uploads/2019/08/Barcelona-Badge-200mm-Wafer.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Placeholder">
+        <h2 class="fw-normal">Lempi seura</h2>
+        <p>FC Barcelonalla on rikas historia ja monia legendoja. Lionel Messi on FC Barcelonan isoin legenda silti. Barcan pelityyli on luova. Syötteleminen on tärkeää ja tiki-taka pelityyli on tullut tunnetuksi Barcan peleistä.</p>
+      </div>
+      <div class="col-lg-4">
+        <img src="https://render.fineartamerica.com/images/rendered/default/flat/round-beach-towel/images/artworkimages/medium/3/neymar-jr-footmagz.jpg?&targetx=-2&targety=-96&imagewidth=788&imageheight=1113&modelwidth=788&modelheight=788&backgroundcolor=3FA743&orientation=0" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Placeholder">
+        <h2 class="fw-normal">Lempi pelaaja</h2>
+        <p>Neymar Jr on minun yksi lempi pelaajistani. Hänet tunnetaan erinomaisesta taidostaan, viehkeydestään ja luovuudestaan kentällä. Hänen kuljetustaidot ja maalinkykytaidot ovat huippuluokkaa. Neymar Jr on pelannut Barcelonassa aikoinaan ja nykyään hän pelaa Saudeissa.  </p>
+      
+      </div>
+      <div class="col-lg-4">
+        <img src="https://www.dx84tech.com/wp-content/uploads/2021/07/Brazil-Flag-round.png" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Placeholder">
+        <h2 class="fw-normal">Lempi maajoukkue</h2>
+        <p>Brasilian maajoukkue on minulle tärkeä ja kannatan sitä aina MM-kisoissa ja Copa Americassa. Heillä on monta loistavaa ja viihdyttävää pelaaja, mikä tekee heidän katsomisestaan mukavaa.  Brasilia on voittanut MM-kisat viisi kertaa (1958, 1962, 1970, 1994, ja 2002), mikä on enemmän kuin mikään muu maa.</p>
+    
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Lempi jalkapallo hetki <span class="text-body-secondary">Unohtumaton kokemus</span></h2>
+        <p class="lead">Vuoden 2022 MM-kisojen finaalissa nähtiin jotain aivan uskomatonta. Argentiina vastaan Ranska oli todella tiukka ottelu. Voiton paineet olivat molemmilla valtavat ja peli meni rangaistuspotkuille. Olin koko pelin ajan aivan jännittynyt enkä meinannut pysyä penkissään. Tätä en tule unohtamaan.</p>
+        <p><a class="btn btn-lg btn-primary" href="https://www.youtube.com/watch?v=zhEWqfP6V_w" target="_blank">Katso video</a></p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2024/08/1280/960/messi1.jpg?ve=1&tl=1" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="Description of image" width="500" height="500">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Lempi rikos <span class="text-body-secondary">Tärkeä käänne pelissä</span></h2>
+        <p class="lead">Kapteeni Zinédine Zidane teki vuonna 2006 urheiluhistorian muistettavimmista hetkistä jalkapallon Ranska-Italia MM-finaalissa. Pelin lisäajalla Zidane suuttui Marco Materazzin loukkaavista kommenteista ja puski häntä rintaan. Zidane sai punaisen kortin. Tämä oli Zidanen uran viimeinen ottelu ennen eläköitymistä. Hän päätti uransa dramaattisella tavalla.</p>
+        <p><a class="btn btn-lg btn-primary" href="https://www.youtube.com/watch?v=zAjWi663kXc" target="_blank">Katso video</a></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="https://i.guim.co.uk/img/media/f02d99c0c61e788e3b293f24b7c0872233e70252/0_43_2640_1584/master/2640.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=df63951db603bd6bc144467073f50456" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="Description of image" width="500" height="500">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Lempi maali <span class="text-body-secondary">Kaikki fanit tietävät</span></h2>
+        <p class="lead">Lionel Messi teki yhden kuuluisimmista maaleista Jalkapallon historiassa vuonna 2007 Getafea vastaan. Messi oli tällöin 19-vuotias. Maali on jäänyt historiaan erityisesti sen takia, että Messi meni käytännössä koko kentän läpi ja teki uskomattoman yksilösuorituksen. Monet ovat verranneet tätä maalia Diego Maradonan vuoden 1986 MM-kisojen legendaariseen maaliin englantia vastaan. Tämä maali oli yksi hänen ensimmäisistä suurista hetkisistään Barcelonassa ja osoitti jo silloin hänen poikkeukselliset kyvyt, jotka myöhemmin nousivat maailmanluokan tasolle.</p>
+        <p><a class="btn btn-lg btn-primary" href="https://www.youtube.com/watch?v=AlnHNi0hdO0" target="_blank">Katso video</a></p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://i.pinimg.com/736x/a6/ce/e9/a6cee9cec7bbcb36fffab9534d725742.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="Description of image" width="500" height="500">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+  </div>
+
+
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2024 Otso9</p>
+  </footer>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+
+  const themeToggleButtons = document.querySelectorAll('[data-bs-theme-value]');
+
+ 
+  themeToggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const theme = button.getAttribute('data-bs-theme-value');
+      document.documentElement.setAttribute('data-bs-theme', theme);
+
+    
+      themeToggleButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+
+      localStorage.setItem('theme', theme);
+    });
+  });
+
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  document.documentElement.setAttribute('data-bs-theme', savedTheme);
+
+  themeToggleButtons.forEach(button => {
+    const theme = button.getAttribute('data-bs-theme-value');
+    const isActive = theme === savedTheme;
+    button.classList.toggle('active', isActive);
+    button.setAttribute('aria-pressed', isActive.toString());
+  });
+</script>
+
+    </body>
+</html>
